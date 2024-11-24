@@ -4,7 +4,7 @@ The game got a huge, i mean VERY HUGE overhaul! We added these
 	--Shotgun VR 80 (Similar to SAIGA 12)
 	--Sniper gun on 5.56 mm, the Scout 21 (Similar to Scout elite)
 	--FN Five Seven, a pistol that uses 5.7mm ammo (the new ammo type launched for this :P )
-	--TEC-9, it's like a DMR but lower than the damage of it. Basically surviv's SVD-63 but worse, but common.
+	--TEC-9, it's also a pistol like a DMR but lower than the damage of it. Basically surviv's SVD-63 but worse, but common.
 -New mode: Suroi mode (based on normal mode)
 -New features: 
 	--Changing loadout such as skins

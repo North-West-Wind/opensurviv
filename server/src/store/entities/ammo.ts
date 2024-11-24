@@ -25,6 +25,13 @@ export default class Ammo extends Item {
 			this.setVelocity(Vec2.UNIT_X.addAngle(this.position.addVec(player.position.inverse()).angle()).scaleAll(0.001));
 			return false;
 		}
+		player.pickedAmmo = true;
+		player.ammoChanged = this.color.toString();
+		player.numberOfAmmo = newAmount.toString()
+		if (player.waitingForReload) {
+			player.reload();
+			player.waitingForReload = false;
+		}
 		return true;
 	}
 

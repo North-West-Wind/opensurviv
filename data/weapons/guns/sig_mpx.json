@@ -1,5 +1,5 @@
 {
-	"name": "HK MP6",
+	"name": "SIG MPX",
 	"color": 3,
 	"ammo": 90,
 	"dual": false,
@@ -13,7 +13,7 @@
 		},
 		"delay": {
 			"switch": 600,
-			"firing": 50
+			"firing": 75
 		},
 		"spread": {
 			"still": 3,
@@ -28,7 +28,7 @@
 		"bullet": {
 			"damage": 8,
 			"falloff": 1,
-			"speed": 110,
+			"speed": 90,
 			"range": [200, 200],
 			"suppressed": false
 		}

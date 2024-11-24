@@ -56,13 +56,18 @@ if (window.location.href!.includes("/loadout")) {
     (<HTMLElement>document.getElementById('loadout-button')).click();
     // Function to close the loadout container
     function closeLoadout() {
-        hideContainer2(); // Close container2 if it's open
+        hideContainer2();
         const container = document.getElementById('loadout-container');
         const overlay = document.getElementById('overlay');
-        (<HTMLElement>container).style.display = 'none';
-        (<HTMLElement>overlay).style.display = 'none';
-    }
+        if (container && overlay) {
+            (container as HTMLElement).style.display = 'none';
+            (overlay as HTMLElement).style.display = 'none';
+        }
 
+        window.location.href = '/';
+    }
+    (window as any).closeLoadout = closeLoadout;
+      
     // Function to show container2
     function showContainer2() {
         const container2 = document.getElementById('container2');

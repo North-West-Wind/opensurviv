@@ -22,6 +22,8 @@ canvas {
 }
 
 div#scopes {
+    pointer-events:all;
+    display: flex;
     position: fixed;
     height: 10vh;
     top: 2vh;
@@ -29,15 +31,21 @@ div#scopes {
     transform: translateX(-50%);
 }
 
-.scope {
+#scope {
+    pointer-events: all;
     border-width: 0;
     border-radius: 50%;
     border-color: #7CFC00;
+    margin: 4px;
     opacity: 0.6;
     transition: all ease .5s;
+    background: rgba(51, 51, 51, 0.5);
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
 }
 
-.scope:hover {
+#scope:hover {
     border-width: 2px;
     transition: all ease .5s;
 }
@@ -193,7 +201,7 @@ div#menu div#connection.panel {
 
 #weapon-container {
     position: relative;
-    left: 84%;
+    left: 83%;
     top: 33.5%;
     height: 30vh;
     width: 15vw;
@@ -262,13 +270,24 @@ div#menu div#connection.panel {
 
 #healing-container {
     position: inherit;
-    top: 27vh;
+    top: 35vh;
     right: 2vh;
     height: 8vh;
     width: 7vw;
     empty-cells: show;
 }
 
+#ammo-container {
+    position: absolute;
+    top: -50px;
+    right: 25px;
+    height: 3vh;
+    width: 25vh;
+}
+.ammos {
+    background-color: rgba(51, 51, 51, 0.5);
+    border-radius: 2px;
+}
 .healing-panel {
     position: relative;
     width: 100%;
@@ -850,3 +869,14 @@ div#menu div.panel#account {
     cursor: pointer;
     display: none;
 }
+
+.ammo-color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: transparent;
+    border: 2px solid black;
+}
+

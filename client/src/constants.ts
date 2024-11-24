@@ -15,7 +15,8 @@ export enum KeyBind {
 	INTERACT = "f",
 	MELEE = "e",
 	LAST_USED = "q",
-	RELOAD = "r"
+	RELOAD = "r",
+	CANCEL = "x"
 }
 
 // Keys for right, up, left, down (ordered)

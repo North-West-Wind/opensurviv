@@ -13,7 +13,7 @@
 		},
 		"delay": {
 			"switch": 400,
-			"firing": 30
+			"firing": 65
 		},
 		"spread": {
 			"still": 5,

@@ -120,6 +120,11 @@ export class ReloadWeaponPacket implements IPacket {
 	type = "reloadweapon";
 }
 
+//notify to cancel any actions going on 
+export class CancelActionsPacket implements IPacket {
+	type = "cancelActionsPacket";
+}
+
 // Packet to notify healing item usage
 export class UseHealingPacket implements IPacket {
 	type = "usehealing";
@@ -130,6 +135,13 @@ export class UseHealingPacket implements IPacket {
 	}
 }
 
+export class ServerScopeUpdatePacket implements IPacket {
+	type = "serverSideScopeUpdate";
+	scope!: number;
+	constructor(scope: number) {
+		this.scope = scope
+	}
+}
 /// Packet from server acknowledgement
 export class AckPacket implements IPacket {
 	type = "ack";
@@ -177,4 +189,16 @@ export class AnnouncementPacket implements IPacket {
 	announcement!: string;
 	killer!: string;
 }
-export type ServerPacketResolvable = AckPacket | GamePacket | MapPacket | SoundPacket | ParticlesPacket | AnnouncementPacket;
+
+export class ScopeUpdatePacket implements IPacket {
+	type = "scopeUpdate";
+	scope!: number;
+
+}
+
+export class AmmoUpdatePacket implements IPacket {
+	type = "ammoUpdatePacket";
+	ammoToChange!: string;
+	numberOfAmmo!: string;
+}
+export type ServerPacketResolvable = AckPacket | GamePacket | MapPacket | SoundPacket | ParticlesPacket | AnnouncementPacket | ScopeUpdatePacket | AmmoUpdatePacket;

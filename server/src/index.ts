@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import "dotenv/config";
 import { readFileSync } from "fs";
 import * as ws from "ws";
 import { ID, receive, send, wait } from "./utils";
-import { MousePressPacket, MouseReleasePacket, MouseMovePacket, MovementPressPacket, MovementReleasePacket, GamePacket, ParticlesPacket, MapPacket, AckPacket, SwitchWeaponPacket, SoundPacket, UseHealingPacket, ResponsePacket, MobileMovementPacket, AnnouncePacket, PlayerRotationDelta } from "./types/packet";
+import { MousePressPacket, MouseReleasePacket, MouseMovePacket, MovementPressPacket, MovementReleasePacket, GamePacket, ParticlesPacket, MapPacket, AckPacket, SwitchWeaponPacket, SoundPacket, UseHealingPacket, ResponsePacket, MobileMovementPacket, AnnouncePacket, PlayerRotationDelta, IPacket, ScopeUpdatePacket, ServerSideScopeUpdate, AmmoUpdatePacket } from "./types/packet";
 import { DIRECTION_VEC, TICKS_PER_SECOND } from "./constants";
 import { CommonAngles, Vec2 } from "./types/math";
 import { Player } from "./store/entities";
@@ -118,7 +119,6 @@ server.on("connection", async socket => {
 	send(socket, new GamePacket(world.entities, world.obstacles.concat(...world.buildings.map(b => b.obstacles.map(o => o.obstacle))), player, world.playerCount, true));
 	// Send the player music
 	for (const sound of world.joinSounds) send(socket, new SoundPacket(sound.path, sound.position));
-
 	// If the client doesn't ping for 30 seconds, we assume it is a disconnection.
 	const timeout = setTimeout(() => {
 		try {socket.close(); } catch (err) { }
@@ -204,6 +204,13 @@ server.on("connection", async socket => {
 			case "usehealing":
 				player.heal((<UseHealingPacket>decoded).item);
 				break;
+			case "serverSideScopeUpdate":
+				const data = (<ServerSideScopeUpdate>decoded)
+				player.inventory.selectScope(Number(data.scope))
+				break;
+			case "cancelActionsPacket":
+				player.healTicks = 0;
+				player.reloadTicks = 0;
 		}
 	});
 });
@@ -222,6 +229,13 @@ setInterval(() => {
 		if (world.particles.length) send(socket, new ParticlesPacket(world.particles, player));
 		for (const sound of world.onceSounds) send(socket, new SoundPacket(sound.path, sound.position));
 		for (const killFeed of world.killFeeds) send(socket, new AnnouncePacket(killFeed.killFeed, killFeed.killer))
+		if (player.changedScope) {
+			send(socket, new ScopeUpdatePacket(player.lastPickedUpScope)); player.changedScope = false;
+		}
+		if (player.pickedAmmo) {
+			send(socket, new AmmoUpdatePacket(player.ammoChanged, player.numberOfAmmo));
+			player.pickedAmmo = false;
+		}
 	});
 	world.postTick();
 }, 1000 / TICKS_PER_SECOND);

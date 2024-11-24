@@ -149,9 +149,6 @@
                 <div class="mode_box" id="suroi-collab">
                     <div class="button" id="button-normal_mode"> Suroi-Collab Mode </div>
                 </div>
-                <div class="mode_box" id="dfbg-collab">
-                    <div class="button" id="button-normal_mode"> DownFall-BattleGround-Collab Mode </div>
-                </div>
             </div>
             <div class="arrow"></div>
             <div class="button" id="connect">Play</div>
@@ -198,6 +195,13 @@
     <div id="hud" class="hidden">
         <div id="playercountcontainer">
             <span id="playercount">1</span>
+            <div id="scopes">
+                <div id="scope">1x </div>
+                <div id="scope" class="scope" style="display: none">2x</div>
+                <div id="scope" class="scope" style="display: none">4x</div>
+                <div id="scope" class="scope" style="display: none">8x</div>
+                <div id="scope" class="scope" style="display: none">15x</div>
+            </div>
             <br />
             <span id="alive">Alive</span>
         </div>
@@ -213,7 +217,29 @@
             <tr class="weapon-panel" id="weapon-panel-2"><td class="weapon-name-container"><span class="weapon-index">3</span><span class="weapon-name" id="weapon-name-2">&nbsp;</span></td><td class="weapon-image-container"><img class="weapon-image" id="weapon-image-2" /></td></tr>
             <tr class="weapon-panel" id="weapon-panel-3"><td class="weapon-name-container"><span class="weapon-index">4</span><span class="weapon-name" id="weapon-name-3">&nbsp;</span></td><td class="weapon-image-container"><img class="weapon-image" id="weapon-image-3" /></td></tr>
         </table>
+        <div id="ammo-container">
+            <div class="ammos" id="9">
+                <span class="ammo-color"></span> 9mm: 0
+            </div>
+            <div class="ammos" id="12">
+                <span class="ammo-color"></span> 12 gauge: 0
+            </div>
+            <div class="ammos" id="7.62">
+                <span class="ammo-color"></span> 7.62mm: 0
+            </div>
+            <div class="ammos" id="5.56">
+                <span class="ammo-color"></span> 5.56mm: 0
+            </div>
+            <div class="ammos" id="5.7">
+                <span class="ammo-color"></span> 5.7mm: 0
+            </div>
+            <div class="ammos" id=".308">
+                <span class="ammo-color"></span> .308 subsonic: 0
+            </div>
+        </div>
+        
         <script src="scripts/bundle.min.js"></script>
+        <script src="scripts/ammo.js"></script>
     </div>
 </body>
 

@@ -23,7 +23,7 @@
 	"entity.gun.vr80": "VR 80",
 	"entity.gun.mosin_nagant": "Mosin Nagant",
 	"entity.gun.scout_21": "Scout 21",
-	"entity.gun.hk_mp6": "HK MP6",
+	"entity.gun.sig_mpx": "SIG MPX",
 	"entity.gun.bt_apc": "BT APC",
 	"entity.gun.tec-9": "TEC-9",
 	"entity.gun.fn_five_seven": "FN Five Seven",
@@ -53,7 +53,7 @@
 	"hud.weapon.m960": "M960",
 	"hud.weapon.m1120": "M1120",
 	"hud.weapon.mosin_nagant": "Mosin Nagant",
-	"hud.weapon.hk_mp6": "HK MP6",
+	"hud.weapon.sig_mpx": "SIG MPX",
 	"hud.weapon.mp222": "MP222",
 	"hud.weapon.sv98": "SV-98",
 	"hud.weapon.vr80": "VR 80",
@@ -63,5 +63,12 @@
 	"hud.weapon.fn_five_seven": "FN Five Seven",
 
 
-	"hud.weapon.fists": "Fists"
+	"hud.weapon.fists": "Fists",
+
+	"_ammosDisplay.0": "9mm",
+	"_ammosDisplay.1": "12 Gauge",
+	"_ammosDisplay.2": "7.62mm",
+	"_ammosDisplay.3": "5.56mm",
+	"_ammosDisplay.8": "5.7mm",
+	"_ammosDisplay.5": ".308 subsonic"
 }

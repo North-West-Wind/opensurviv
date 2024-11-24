@@ -83,7 +83,7 @@ if (!window.location.href!.includes("/loadout")) {
 	}
 	document.getElementById("button-close")!.onclick = closeBox;
 }
-const modes = ["normal", "suroi_collab", "dfbg-collab"]
+const modes = ["normal", "suroi_collab"]
 modes.forEach(md => {
 	console.log(document.getElementsByClassName("box-selectable")[0].children[modes.indexOf(md)].querySelector("div"))
 	document.getElementsByClassName("box-selectable")[0].children[modes.indexOf(md)].querySelector("div")?.addEventListener("click", () => { setMode(md); console.log("DONE:)") })

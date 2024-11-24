@@ -44,6 +44,12 @@ export default class Gun extends Item {
 		world.entities.push(gun);
 		// Swap the player's weapon on hand with the one on ground
 		player.inventory.setWeapon(castCorrectWeapon(this.nameId));
+		console.log("reload before")
+		setTimeout(() => {
+			player.maxReloadTicks = 0;
+			player.reload();
+}, 45)
+		console.log("reload after")
 		return true;
 	}
 

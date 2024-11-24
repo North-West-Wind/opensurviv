@@ -63,7 +63,7 @@ export class MeleeWeapon extends Weapon {
 			}
 		}
 	
-		const fistRadius = radius / 3;
+		const fistRadius = (radius / 3) * 1.3;
 		ctx.lineWidth = fistRadius / 3;
 		ctx.strokeStyle = "#000000";
 		const img = MeleeWeapon.fistImages.get(player.skin!);
@@ -98,7 +98,7 @@ export class GunWeapon extends Weapon {
 
 	render(player: Player, _canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, scale: number): void {
 		const radius = scale * player.hitbox.comparable;
-		const fistRadius = radius / 3;
+		const fistRadius = (radius / 3) * 1.3;
 		const fistPositions = [new Vec2(player.hitbox.comparable, 0.1), new Vec2(player.hitbox.comparable + 0.25, -0.1)];
 		var offset = Vec2.ZERO;
 		ctx.fillStyle = "#222";

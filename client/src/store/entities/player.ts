@@ -59,6 +59,7 @@ export default class Player extends Entity {
 	currentDeathImg = new Image();
 	interactMessage: string | null = null;
 	currentHealItem: string | null = null;
+	pickedAmmo = false;
 	
 
 	constructor(minEntity: MinEntity & AdditionalEntity) {
