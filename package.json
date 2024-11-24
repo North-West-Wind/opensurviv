@@ -5,14 +5,13 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf dist",
     "build": "tsc",
     "build-server": "cd server && npm run build",
     "build-client": "cd client && npm run build",
     "deep-install": "npm i && cd server && npm i && cd ../client && npm i",
     "gameserv": "cd server && npm run build && npm start",
     "webserv": "npm run build-client && npm run build && node lib/index.js",
-    "start": "concurrently \"npm run webserv\" \"npm run gameserv\""
+    "start": "concurrently \"npm run webserv\" \"npm run gameserv\" "
   },
   "repository": {
     "type": "git",
@@ -27,37 +26,23 @@
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
     "@types/express": "^4.17.17",
-    "@types/howler": "^2.2.12",
-    "@types/jquery": "^3.5.32",
-    "@types/markdown-it": "^14.1.2",
     "@types/mime-types": "^2.1.1",
     "@types/node": "^18.15.5",
-    "@types/ws": "^8.5.13",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.28.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "typescript": "^5.0.2",
-    "rimraf": "^5.0.0"
+    "typescript": "^5.0.2"
   },
   "dependencies": {
-    "axios": "^1.7.7",
     "body-parser": "^1.20.2",
-    "cookies-utils": "^1.0.0",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "howler": "^2.2.4",
-    "jquery": "^3.7.1",
-    "markdown-it": "^14.1.0",
     "mime-types": "^2.1.35",
-    "msgpack-lite": "^0.1.26",
     "mysql2": "^3.6.0",
     "nipplejs": "^0.10.1",
-    "node-fetch": "^3.3.2",
-    "pako": "^2.1.0",
-    "sqlite3": "^5.1.6",
-    "ws": "^8.18.0"
+    "sqlite3": "^5.1.6"
   }
 }
