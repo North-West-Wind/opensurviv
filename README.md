@@ -13,8 +13,9 @@ Install [Node.js](https://nodejs.org) before hand.
 2. Open your terminal and `cd` into the directory it is cloned.
 3. Then move into the server `cd server` and install npm `npm install`.
 4. Go to the client folder `cd ../client` and install npm there `npm install`.
-5. Go back `cd ..` and run `npm run start` and wait till both servers have started up
-6. To open the game, go to https://127.0.0.1:8000 in your browser.
+5. Go back `cd ..` and run `npm run build`.
+6. run `npm run start` and wait till both servers have started up
+7. To open the game, go to https://127.0.0.1:8000 in your browser.
 
 Note: Once the project is finished, it will be published in `npm`. Instructions will be different after that.
 
